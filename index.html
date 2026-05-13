@@ -3,484 +3,353 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roadmap GitHub Actions com Node.js</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      background: #f4f6f8;
-      color: #222;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #111827;
-      color: white;
-      padding: 32px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      color: #d1d5db;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 14px;
-      padding: 24px;
-      margin-bottom: 24px;
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    }
-
-    .card h2 {
-      margin-bottom: 16px;
-      color: #111827;
-    }
-
-    .roadmap {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-    }
-
-    .step {
-      border-left: 5px solid #2563eb;
-      background: #f9fafb;
-      padding: 18px;
-      border-radius: 10px;
-    }
-
-    .step span {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      margin-bottom: 10px;
-    }
-
-    .step h3 {
-      margin-bottom: 8px;
-      color: #1f2937;
-    }
-
-    .progress-area {
-      margin-bottom: 20px;
-    }
-
-    .progress-info {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 24px;
-      background: #e5e7eb;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(90deg, #2563eb, #22c55e);
-      transition: width 0.4s ease;
-    }
-
-    .question-box {
-      margin-top: 18px;
-      padding: 20px;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      background: #f9fafb;
-    }
-
-    .question-box h3 {
-      margin-bottom: 16px;
-    }
-
-    .options {
-      display: grid;
-      gap: 10px;
-    }
-
-    .option {
-      border: none;
-      padding: 12px 14px;
-      border-radius: 10px;
-      background: #e5e7eb;
-      color: #111827;
-      cursor: pointer;
-      text-align: left;
-      font-size: 1rem;
-      transition: 0.2s;
-    }
-
-    .option:hover {
-      background: #dbeafe;
-    }
-
-    .option.correct {
-      background: #bbf7d0;
-      border: 1px solid #22c55e;
-    }
-
-    .option.wrong {
-      background: #fecaca;
-      border: 1px solid #ef4444;
-    }
-
-    .feedback {
-      margin-top: 14px;
-      font-weight: bold;
-    }
-
-    .actions {
-      display: flex;
-      gap: 10px;
-      margin-top: 18px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      border: none;
-      padding: 12px 18px;
-      border-radius: 10px;
-      background: #2563eb;
-      color: white;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .btn:hover {
-      background: #1d4ed8;
-    }
-
-    .btn.secondary {
-      background: #374151;
-    }
-
-    .btn.secondary:hover {
-      background: #1f2937;
-    }
-
-    .result {
-      display: none;
-      padding: 20px;
-      border-radius: 12px;
-      background: #ecfdf5;
-      border: 1px solid #22c55e;
-      margin-top: 20px;
-    }
-
-    code {
-      background: #111827;
-      color: #e5e7eb;
-      padding: 3px 6px;
-      border-radius: 5px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #6b7280;
-    }
-  </style>
+  <title>Fundamentos de Redes</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header>
-    <h1>Roadmap: GitHub Actions com Node.js</h1>
-    <p>Aprenda o básico de CI/CD criando um workflow simples para projetos Node.js.</p>
+    <h1>Fundamentos de Redes</h1>
+    <p>Um mini material de estudos com roadmap, resumo completo por capítulo e quiz interativo para testar seus conhecimentos.</p>
+
+    <nav>
+      <button class="nav-btn active" data-page="homePage">Roadmap + Quiz</button>
+      <button class="nav-btn" data-page="summaryPage">Resumão dos Capítulos</button>
+    </nav>
   </header>
 
-  <main>
-    <section class="card">
-      <h2>Roadmap de Estudos</h2>
-      <div class="roadmap">
-        <div class="step">
-          <span>Etapa 1</span>
-          <h3>Entender CI/CD</h3>
-          <p>Aprenda o conceito de integração contínua e entrega contínua.</p>
-        </div>
-
-        <div class="step">
-          <span>Etapa 2</span>
-          <h3>Conhecer GitHub Actions</h3>
-          <p>Entenda o que são workflows, jobs, steps e actions.</p>
-        </div>
-
-        <div class="step">
-          <span>Etapa 3</span>
-          <h3>Criar a pasta correta</h3>
-          <p>Todo workflow deve ficar dentro de <code>.github/workflows</code>.</p>
-        </div>
-
-        <div class="step">
-          <span>Etapa 4</span>
-          <h3>Configurar Node.js</h3>
-          <p>Use a action <code>actions/setup-node</code> para definir a versão do Node.</p>
-        </div>
-
-        <div class="step">
-          <span>Etapa 5</span>
-          <h3>Rodar comandos npm</h3>
-          <p>Execute comandos como <code>npm install</code>, <code>npm test</code> e <code>npm run build</code>.</p>
-        </div>
-
-        <div class="step">
-          <span>Etapa 6</span>
-          <h3>Analisar resultados</h3>
-          <p>Veja os logs na aba Actions do GitHub e corrija possíveis erros.</p>
-        </div>
+  <main class="container">
+    <section class="page active" id="homePage">
+      <div class="section-title">
+        <h2>Roadmap de Estudos</h2>
+        <p>Siga a ordem abaixo para construir uma base sólida em redes.</p>
       </div>
+
+      <div class="roadmap">
+        <article class="card">
+          <div class="icon">🌐</div>
+          <h3>1. Conceitos básicos</h3>
+          <ul>
+            <li>O que é uma rede</li>
+            <li>LAN, WAN, MAN e WLAN</li>
+            <li>Cliente, servidor e host</li>
+            <li>Internet, intranet e extranet</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🧩</div>
+          <h3>2. Modelos de rede</h3>
+          <ul>
+            <li>Modelo OSI</li>
+            <li>Modelo TCP/IP</li>
+            <li>Camadas e suas funções</li>
+            <li>Encapsulamento de dados</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">📡</div>
+          <h3>3. Endereçamento IP</h3>
+          <ul>
+            <li>IPv4 e IPv6</li>
+            <li>IP público e privado</li>
+            <li>Máscara de sub-rede</li>
+            <li>Gateway e DNS</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🔌</div>
+          <h3>4. Equipamentos</h3>
+          <ul>
+            <li>Switch</li>
+            <li>Roteador</li>
+            <li>Access Point</li>
+            <li>Firewall</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">📦</div>
+          <h3>5. Protocolos</h3>
+          <ul>
+            <li>HTTP e HTTPS</li>
+            <li>TCP e UDP</li>
+            <li>DNS</li>
+            <li>DHCP</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="icon">🛡️</div>
+          <h3>6. Segurança</h3>
+          <ul>
+            <li>Firewall e regras</li>
+            <li>VPN</li>
+            <li>Criptografia</li>
+            <li>Boas práticas básicas</li>
+          </ul>
+        </article>
+      </div>
+
+      <section class="network-visual">
+        <h2>Exemplo simples de comunicação em rede</h2>
+        <p>Um dispositivo envia dados para outro passando por equipamentos intermediários.</p>
+        <div class="network-line">
+          <div class="node">PC</div>
+          <div class="cable"></div>
+          <div class="node">Switch</div>
+          <div class="cable"></div>
+          <div class="node">Roteador</div>
+          <div class="cable"></div>
+          <div class="node">Internet</div>
+          <div class="cable"></div>
+          <div class="node">Servidor</div>
+        </div>
+      </section>
+
+      <section class="quiz-box">
+        <div class="quiz-header">
+          <h2>Quiz de Redes</h2>
+          <div class="score" id="score">Pontuação: 0</div>
+        </div>
+
+        <div class="progress-area">
+          <div class="progress-text">
+            <span id="progressText">Questão 1 de 8</span>
+            <span id="progressPercent">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <div id="quizContent">
+          <p class="question" id="question"></p>
+          <div class="answers" id="answers"></div>
+          <p class="feedback" id="feedback"></p>
+
+          <div class="actions">
+            <button class="btn btn-secondary" id="restartBtn">Reiniciar</button>
+            <button class="btn btn-primary" id="nextBtn" disabled>Próxima</button>
+          </div>
+        </div>
+
+        <div class="result" id="result">
+          <h3>Quiz finalizado!</h3>
+          <p id="finalMessage"></p>
+          <br />
+          <button class="btn btn-primary" id="tryAgainBtn">Tentar novamente</button>
+        </div>
+      </section>
     </section>
 
-    <section class="card">
-      <h2>Quiz Interativo</h2>
-
-      <div class="progress-area">
-        <div class="progress-info">
-          <span>Progresso</span>
-          <span id="progressText">0%</span>
-        </div>
-        <div class="progress-bar">
-          <div class="progress-fill" id="progressFill"></div>
-        </div>
+    <section class="page" id="summaryPage">
+      <div class="section-title">
+        <h2>Resumão Completo dos Capítulos</h2>
+        <p>Material de apoio com explicações mais detalhadas para cada tópico do roadmap.</p>
       </div>
 
-      <div class="question-box">
-        <h3 id="questionTitle">Pergunta</h3>
-        <div class="options" id="options"></div>
-        <p class="feedback" id="feedback"></p>
+      <div class="study-grid">
+        <article class="chapter">
+          <div class="chapter-header">
+            <div class="chapter-number">1</div>
+            <h2>Conceitos básicos de redes</h2>
+          </div>
+          <p class="chapter-intro">Antes de estudar protocolos, IP e segurança, é importante entender o que é uma rede e por que ela existe.</p>
 
-        <div class="actions">
-          <button class="btn" id="nextBtn" onclick="nextQuestion()" disabled>Próxima pergunta</button>
-          <button class="btn secondary" onclick="restartQuiz()">Reiniciar</button>
-        </div>
-      </div>
+          <div class="topic">
+            <h3>O que é uma rede?</h3>
+            <p>Uma rede é um conjunto de dispositivos conectados entre si para trocar informações, compartilhar recursos e permitir comunicação. Esses dispositivos podem ser computadores, celulares, servidores, impressoras, câmeras e outros equipamentos.</p>
+            <div class="example">Exemplo: computadores de uma escola conectados para acessar a internet e uma impressora compartilhada.</div>
+          </div>
 
-      <div class="result" id="resultBox">
-        <h3>Parabéns!</h3>
-        <p>Você concluiu o quiz e chegou a 100% de progresso.</p>
+          <div class="topic">
+            <h3>LAN, WAN, MAN e WLAN</h3>
+            <p>LAN é uma rede local, como a rede de uma casa, escola ou empresa. WAN é uma rede de longa distância, como a internet. MAN cobre uma área metropolitana, como uma cidade. WLAN é uma rede local sem fio, normalmente usando Wi-Fi.</p>
+            <div class="example">Exemplo: o Wi-Fi da sua casa é uma WLAN dentro de uma LAN.</div>
+          </div>
+
+          <div class="topic">
+            <h3>Cliente, servidor e host</h3>
+            <p>Cliente é o dispositivo ou sistema que solicita um serviço. Servidor é quem fornece esse serviço. Host é qualquer dispositivo conectado à rede que possui identificação, como endereço IP.</p>
+            <div class="example">Exemplo: ao acessar um site, seu navegador é o cliente e o computador que hospeda o site é o servidor.</div>
+          </div>
+
+          <div class="topic">
+            <h3>Internet, intranet e extranet</h3>
+            <p>A internet é a rede mundial de computadores. A intranet é uma rede privada usada dentro de uma organização. A extranet é uma extensão controlada da intranet para usuários externos, como parceiros ou fornecedores.</p>
+            <div class="example">Exemplo: um portal interno de funcionários é uma intranet.</div>
+          </div>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-header">
+            <div class="chapter-number">2</div>
+            <h2>Modelos de rede</h2>
+          </div>
+          <p class="chapter-intro">Modelos de rede ajudam a entender como os dados saem de um dispositivo e chegam até outro.</p>
+
+          <div class="topic">
+            <h3>Modelo OSI</h3>
+            <p>O modelo OSI divide a comunicação em 7 camadas: física, enlace, rede, transporte, sessão, apresentação e aplicação. Ele é muito usado para estudo, diagnóstico e entendimento da comunicação em rede.</p>
+            <div class="example">Exemplo: cabo de rede fica relacionado à camada física; IP fica relacionado à camada de rede.</div>
+          </div>
+
+          <div class="topic">
+            <h3>Modelo TCP/IP</h3>
+            <p>O modelo TCP/IP é mais usado na prática e está diretamente ligado ao funcionamento da internet. Ele costuma ser dividido em camadas como acesso à rede, internet, transporte e aplicação.</p>
+            <div class="example">Exemplo: HTTP trabalha na aplicação; TCP trabalha no transporte; IP trabalha na camada de internet.</div>
+          </div>
+
+          <div class="topic">
+            <h3>Camadas e suas funções</h3>
+            <p>Cada camada tem uma responsabilidade específica. Algumas cuidam do meio físico, outras do endereçamento, outras da entrega dos dados e outras da aplicação que o usuário utiliza.</p>
+            <div class="example">Exemplo: quando você acessa um site, várias camadas trabalham juntas para carregar a página.</div>
+          </div>
+
+          <div class="topic">
+            <h3>Encapsulamento de dados</h3>
+            <p>Encapsulamento é o processo de adicionar informações aos dados conforme eles passam pelas camadas. Essas informações ajudam no envio, roteamento, controle e entrega da mensagem.</p>
+            <div class="example">Exemplo: os dados de uma página web recebem informações de TCP, IP e da placa de rede antes de serem enviados.</div>
+          </div>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-header">
+            <div class="chapter-number">3</div>
+            <h2>Endereçamento IP</h2>
+          </div>
+          <p class="chapter-intro">O endereço IP identifica dispositivos na rede e permite que eles se comuniquem.</p>
+
+          <div class="topic">
+            <h3>IPv4 e IPv6</h3>
+            <p>IPv4 é o formato mais tradicional, composto por quatro blocos numéricos, como 192.168.0.10. IPv6 é uma versão mais nova, criada para suportar uma quantidade muito maior de endereços.</p>
+            <div class="example">Exemplo IPv4: 192.168.1.5. Exemplo IPv6: 2001:0db8:85a3::8a2e:0370:7334.</div>
+          </div>
+
+          <div class="topic">
+            <h3>IP público e IP privado</h3>
+            <p>IP privado é usado dentro de redes locais. IP público é usado para identificação na internet. Normalmente, os dispositivos da sua casa usam IP privado, enquanto o roteador usa um IP público para sair para a internet.</p>
+            <div class="example">Exemplo: 192.168.0.20 geralmente é um IP privado.</div>
+          </div>
+
+          <div class="topic">
+            <h3>Máscara de sub-rede</h3>
+            <p>A máscara de sub-rede ajuda a definir qual parte do IP representa a rede e qual parte representa o dispositivo. Ela é importante para organizar redes e separar grupos de dispositivos.</p>
+            <div class="example">Exemplo: em 192.168.1.10 com máscara 255.255.255.0, a rede geralmente é 192.168.1.0.</div>
+          </div>
+
+          <div class="topic">
+            <h3>Gateway e DNS</h3>
+            <p>Gateway é a saída da rede local para outras redes, geralmente o roteador. DNS é o serviço que traduz nomes de domínio em endereços IP.</p>
+            <div class="example">Exemplo: ao digitar google.com, o DNS descobre qual IP corresponde a esse nome.</div>
+          </div>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-header">
+            <div class="chapter-number">4</div>
+            <h2>Equipamentos de rede</h2>
+          </div>
+          <p class="chapter-intro">Os equipamentos de rede são responsáveis por conectar dispositivos, distribuir sinal e controlar o tráfego.</p>
+
+          <div class="topic">
+            <h3>Switch</h3>
+            <p>O switch conecta vários dispositivos dentro de uma mesma rede local. Ele encaminha os dados para o dispositivo correto usando endereços físicos, conhecidos como endereços MAC.</p>
+            <div class="example">Exemplo: em um laboratório de informática, vários PCs podem estar ligados a um switch.</div>
+          </div>
+
+          <div class="topic">
+            <h3>Roteador</h3>
+            <p>O roteador conecta redes diferentes. Em casa, ele geralmente conecta sua rede local à internet e também pode distribuir endereços IP para os dispositivos.</p>
+            <div class="example">Exemplo: o roteador da sua casa permite que celular, notebook e TV acessem a internet.</div>
+          </div>
+
+          <div class="topic">
+            <h3>Access Point</h3>
+            <p>O Access Point permite a conexão sem fio de dispositivos à rede. Ele é usado para criar ou ampliar uma rede Wi-Fi.</p>
+            <div class="example">Exemplo: uma escola pode usar vários Access Points para distribuir Wi-Fi em salas diferentes.</div>
+          </div>
+
+          <div class="topic">
+            <h3>Firewall</h3>
+            <p>O firewall filtra o tráfego de rede com base em regras. Ele pode permitir ou bloquear conexões, ajudando a proteger a rede contra acessos indevidos.</p>
+            <div class="example">Exemplo: uma empresa pode bloquear acessos externos a portas não utilizadas.</div>
+          </div>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-header">
+            <div class="chapter-number">5</div>
+            <h2>Protocolos de rede</h2>
+          </div>
+          <p class="chapter-intro">Protocolos são regras de comunicação. Eles definem como os dados serão enviados, recebidos e interpretados.</p>
+
+          <div class="topic">
+            <h3>HTTP e HTTPS</h3>
+            <p>HTTP é usado para comunicação entre navegador e sites. HTTPS é a versão segura, usando criptografia para proteger os dados transmitidos.</p>
+            <div class="example">Exemplo: sites de bancos e lojas virtuais devem usar HTTPS.</div>
+          </div>
+
+          <div class="topic">
+            <h3>TCP e UDP</h3>
+            <p>TCP é confiável e garante a entrega correta dos dados, sendo usado em navegação web, e-mail e transferências importantes. UDP é mais rápido, mas não garante entrega, sendo comum em chamadas de vídeo, jogos online e transmissões ao vivo.</p>
+            <div class="example">Exemplo: baixar um arquivo usa TCP; uma chamada de voz pode usar UDP.</div>
+          </div>
+
+          <div class="topic">
+            <h3>DNS</h3>
+            <p>DNS traduz nomes de domínio para endereços IP. Sem DNS, seria necessário decorar números de IP para acessar sites.</p>
+            <div class="example">Exemplo: o DNS transforma exemplo.com em um endereço IP do servidor.</div>
+          </div>
+
+          <div class="topic">
+            <h3>DHCP</h3>
+            <p>DHCP distribui automaticamente configurações de rede, como IP, máscara, gateway e DNS. Isso evita configurar cada dispositivo manualmente.</p>
+            <div class="example">Exemplo: quando você conecta o celular ao Wi-Fi, ele recebe um IP automaticamente pelo DHCP.</div>
+          </div>
+        </article>
+
+        <article class="chapter">
+          <div class="chapter-header">
+            <div class="chapter-number">6</div>
+            <h2>Segurança em redes</h2>
+          </div>
+          <p class="chapter-intro">Segurança em redes envolve proteger dados, controlar acessos e reduzir riscos de ataques.</p>
+
+          <div class="topic">
+            <h3>Firewall e regras</h3>
+            <p>O firewall funciona como uma barreira de controle. Suas regras definem quais conexões podem entrar ou sair da rede, com base em IP, porta, protocolo ou aplicação.</p>
+            <div class="example">Exemplo: liberar a porta 443 para HTTPS e bloquear portas desnecessárias.</div>
+          </div>
+
+          <div class="topic">
+            <h3>VPN</h3>
+            <p>VPN cria uma conexão segura entre o usuário e uma rede ou servidor. Ela é muito usada para acesso remoto seguro e para proteger dados em redes não confiáveis.</p>
+            <div class="example">Exemplo: um funcionário acessando a rede da empresa de casa usando VPN.</div>
+          </div>
+
+          <div class="topic">
+            <h3>Criptografia</h3>
+            <p>Criptografia transforma dados em uma forma protegida, dificultando que terceiros entendam as informações mesmo que consigam interceptá-las.</p>
+            <div class="example">Exemplo: HTTPS usa criptografia para proteger senhas e dados enviados em formulários.</div>
+          </div>
+
+          <div class="topic">
+            <h3>Boas práticas básicas</h3>
+            <p>Algumas boas práticas são: usar senhas fortes, atualizar sistemas, trocar senhas padrão de roteadores, segmentar redes, usar firewall, monitorar acessos e evitar serviços expostos sem necessidade.</p>
+            <div class="example">Exemplo: trocar a senha padrão do roteador evita acessos não autorizados.</div>
+          </div>
+        </article>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>Atividade prática: GitHub Actions + Node.js + HTML, CSS e JavaScript</p>
+    Desenvolvido para estudos de Fundamentos de Redes • HTML, CSS e JS
   </footer>
 
-  <script>
-    const questions = [
-      {
-        question: "1. Para que serve o GitHub Actions?",
-        options: [
-          "Apenas para criar páginas HTML",
-          "Para automatizar tarefas como testes, builds e deploys",
-          "Para substituir o Git",
-          "Para criar banco de dados automaticamente"
-        ],
-        answer: 1
-      },
-      {
-        question: "2. Onde os workflows devem ser criados dentro do projeto?",
-        options: [
-          "src/actions",
-          "node_modules/workflows",
-          ".github/workflows",
-          "public/github"
-        ],
-        answer: 2
-      },
-      {
-        question: "3. Qual arquivo geralmente usamos para criar um workflow?",
-        options: [
-          "index.html",
-          "workflow.yaml ou workflow.yml",
-          "package-lock.json",
-          "server.js"
-        ],
-        answer: 1
-      },
-      {
-        question: "4. O que significa o bloco 'on' em um workflow?",
-        options: [
-          "Define quando o workflow será executado",
-          "Define a versão do Node.js",
-          "Instala as dependências do projeto",
-          "Cria uma branch automaticamente"
-        ],
-        answer: 0
-      },
-      {
-        question: "5. Qual action é usada para baixar o código do repositório na máquina virtual?",
-        options: [
-          "actions/setup-node",
-          "actions/install-node",
-          "actions/checkout",
-          "actions/npm-run"
-        ],
-        answer: 2
-      },
-      {
-        question: "6. Qual action configura o Node.js no workflow?",
-        options: [
-          "actions/setup-node",
-          "actions/checkout",
-          "node/install",
-          "github/node-start"
-        ],
-        answer: 0
-      },
-      {
-        question: "7. Qual comando instala as dependências de um projeto Node.js?",
-        options: [
-          "npm start",
-          "npm install",
-          "node install",
-          "git install"
-        ],
-        answer: 1
-      },
-      {
-        question: "8. Para que serve o comando npm run build?",
-        options: [
-          "Para apagar o projeto",
-          "Para gerar/validar a versão de produção do projeto",
-          "Para criar uma conta no GitHub",
-          "Para abrir o navegador automaticamente"
-        ],
-        answer: 1
-      },
-      {
-        question: "9. Onde podemos acompanhar a execução do workflow no GitHub?",
-        options: [
-          "Na aba Actions",
-          "Na aba Issues",
-          "Na aba Wiki",
-          "No arquivo README apenas"
-        ],
-        answer: 0
-      },
-      {
-        question: "10. Qual é a principal vantagem de usar CI com GitHub Actions?",
-        options: [
-          "Evitar o uso de JavaScript",
-          "Automatizar verificações e reduzir erros antes do deploy",
-          "Remover a necessidade de programar",
-          "Criar imagens automaticamente para redes sociais"
-        ],
-        answer: 1
-      }
-    ];
-
-    let currentQuestion = 0;
-    let answered = false;
-
-    const questionTitle = document.getElementById("questionTitle");
-    const optionsContainer = document.getElementById("options");
-    const feedback = document.getElementById("feedback");
-    const nextBtn = document.getElementById("nextBtn");
-    const progressFill = document.getElementById("progressFill");
-    const progressText = document.getElementById("progressText");
-    const resultBox = document.getElementById("resultBox");
-
-    function loadQuestion() {
-      answered = false;
-      feedback.textContent = "";
-      nextBtn.disabled = true;
-      resultBox.style.display = "none";
-
-      const item = questions[currentQuestion];
-      questionTitle.textContent = item.question;
-      optionsContainer.innerHTML = "";
-
-      item.options.forEach((option, index) => {
-        const button = document.createElement("button");
-        button.className = "option";
-        button.textContent = option;
-        button.onclick = () => checkAnswer(button, index);
-        optionsContainer.appendChild(button);
-      });
-    }
-
-    function checkAnswer(button, selectedIndex) {
-      if (answered) return;
-
-      answered = true;
-      const correctIndex = questions[currentQuestion].answer;
-      const allOptions = document.querySelectorAll(".option");
-
-      allOptions.forEach((option, index) => {
-        option.disabled = true;
-
-        if (index === correctIndex) {
-          option.classList.add("correct");
-        }
-      });
-
-      if (selectedIndex === correctIndex) {
-        feedback.textContent = "Resposta correta!";
-        feedback.style.color = "#15803d";
-      } else {
-        button.classList.add("wrong");
-        feedback.textContent = "Resposta incorreta. Observe a resposta correta destacada.";
-        feedback.style.color = "#b91c1c";
-      }
-
-      updateProgress();
-      nextBtn.disabled = false;
-
-      if (currentQuestion === questions.length - 1) {
-        nextBtn.textContent = "Finalizar";
-      }
-    }
-
-    function updateProgress() {
-      const progress = Math.round(((currentQuestion + 1) / questions.length) * 100);
-      progressFill.style.width = progress + "%";
-      progressText.textContent = progress + "%";
-    }
-
-    function nextQuestion() {
-      if (currentQuestion < questions.length - 1) {
-        currentQuestion++;
-        loadQuestion();
-      } else {
-        resultBox.style.display = "block";
-        nextBtn.disabled = true;
-      }
-    }
-
-    function restartQuiz() {
-      currentQuestion = 0;
-      progressFill.style.width = "0%";
-      progressText.textContent = "0%";
-      nextBtn.textContent = "Próxima pergunta";
-      loadQuestion();
-    }
-
-    loadQuestion();
-  </script>
+  <script src="js/script.js">  </script>
 </body>
 </html>
