@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roadmap GitHub Actions com Node.js</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f4f6f8;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 32px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #d1d5db;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h2 {
+      margin-bottom: 16px;
+      color: #111827;
+    }
+
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .step {
+      border-left: 5px solid #2563eb;
+      background: #f9fafb;
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    .step span {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+      color: #1f2937;
+    }
+
+    .progress-area {
+      margin-bottom: 20px;
+    }
+
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 24px;
+      background: #e5e7eb;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #2563eb, #22c55e);
+      transition: width 0.4s ease;
+    }
+
+    .question-box {
+      margin-top: 18px;
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background: #f9fafb;
+    }
+
+    .question-box h3 {
+      margin-bottom: 16px;
+    }
+
+    .options {
+      display: grid;
+      gap: 10px;
+    }
+
+    .option {
+      border: none;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: #e5e7eb;
+      color: #111827;
+      cursor: pointer;
+      text-align: left;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+
+    .option:hover {
+      background: #dbeafe;
+    }
+
+    .option.correct {
+      background: #bbf7d0;
+      border: 1px solid #22c55e;
+    }
+
+    .option.wrong {
+      background: #fecaca;
+      border: 1px solid #ef4444;
+    }
+
+    .feedback {
+      margin-top: 14px;
+      font-weight: bold;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: #2563eb;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    .btn.secondary {
+      background: #374151;
+    }
+
+    .btn.secondary:hover {
+      background: #1f2937;
+    }
+
+    .result {
+      display: none;
+      padding: 20px;
+      border-radius: 12px;
+      background: #ecfdf5;
+      border: 1px solid #22c55e;
+      margin-top: 20px;
+    }
+
+    code {
+      background: #111827;
+      color: #e5e7eb;
+      padding: 3px 6px;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Roadmap: GitHub Actions com Node.js</h1>
+    <p>Aprenda o básico de CI/CD criando um workflow simples para projetos Node.js.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Roadmap de Estudos</h2>
+      <div class="roadmap">
+        <div class="step">
+          <span>Etapa 1</span>
+          <h3>Entender CI/CD</h3>
+          <p>Aprenda o conceito de integração contínua e entrega contínua.</p>
+        </div>
+
+        <div class="step">
+          <span>Etapa 2</span>
+          <h3>Conhecer GitHub Actions</h3>
+          <p>Entenda o que são workflows, jobs, steps e actions.</p>
+        </div>
+
+        <div class="step">
+          <span>Etapa 3</span>
+          <h3>Criar a pasta correta</h3>
+          <p>Todo workflow deve ficar dentro de <code>.github/workflows</code>.</p>
+        </div>
+
+        <div class="step">
+          <span>Etapa 4</span>
+          <h3>Configurar Node.js</h3>
+          <p>Use a action <code>actions/setup-node</code> para definir a versão do Node.</p>
+        </div>
+
+        <div class="step">
+          <span>Etapa 5</span>
+          <h3>Rodar comandos npm</h3>
+          <p>Execute comandos como <code>npm install</code>, <code>npm test</code> e <code>npm run build</code>.</p>
+        </div>
+
+        <div class="step">
+          <span>Etapa 6</span>
+          <h3>Analisar resultados</h3>
+          <p>Veja os logs na aba Actions do GitHub e corrija possíveis erros.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Quiz Interativo</h2>
+
+      <div class="progress-area">
+        <div class="progress-info">
+          <span>Progresso</span>
+          <span id="progressText">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <div class="question-box">
+        <h3 id="questionTitle">Pergunta</h3>
+        <div class="options" id="options"></div>
+        <p class="feedback" id="feedback"></p>
+
+        <div class="actions">
+          <button class="btn" id="nextBtn" onclick="nextQuestion()" disabled>Próxima pergunta</button>
+          <button class="btn secondary" onclick="restartQuiz()">Reiniciar</button>
+        </div>
+      </div>
+
+      <div class="result" id="resultBox">
+        <h3>Parabéns!</h3>
+        <p>Você concluiu o quiz e chegou a 100% de progresso.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Atividade prática: GitHub Actions + Node.js + HTML, CSS e JavaScript</p>
+  </footer>
+
+  <script>
+    const questions = [
+      {
+        question: "1. Para que serve o GitHub Actions?",
+        options: [
+          "Apenas para criar páginas HTML",
+          "Para automatizar tarefas como testes, builds e deploys",
+          "Para substituir o Git",
+          "Para criar banco de dados automaticamente"
+        ],
+        answer: 1
+      },
+      {
+        question: "2. Onde os workflows devem ser criados dentro do projeto?",
+        options: [
+          "src/actions",
+          "node_modules/workflows",
+          ".github/workflows",
+          "public/github"
+        ],
+        answer: 2
+      },
+      {
+        question: "3. Qual arquivo geralmente usamos para criar um workflow?",
+        options: [
+          "index.html",
+          "workflow.yaml ou workflow.yml",
+          "package-lock.json",
+          "server.js"
+        ],
+        answer: 1
+      },
+      {
+        question: "4. O que significa o bloco 'on' em um workflow?",
+        options: [
+          "Define quando o workflow será executado",
+          "Define a versão do Node.js",
+          "Instala as dependências do projeto",
+          "Cria uma branch automaticamente"
+        ],
+        answer: 0
+      },
+      {
+        question: "5. Qual action é usada para baixar o código do repositório na máquina virtual?",
+        options: [
+          "actions/setup-node",
+          "actions/install-node",
+          "actions/checkout",
+          "actions/npm-run"
+        ],
+        answer: 2
+      },
+      {
+        question: "6. Qual action configura o Node.js no workflow?",
+        options: [
+          "actions/setup-node",
+          "actions/checkout",
+          "node/install",
+          "github/node-start"
+        ],
+        answer: 0
+      },
+      {
+        question: "7. Qual comando instala as dependências de um projeto Node.js?",
+        options: [
+          "npm start",
+          "npm install",
+          "node install",
+          "git install"
+        ],
+        answer: 1
+      },
+      {
+        question: "8. Para que serve o comando npm run build?",
+        options: [
+          "Para apagar o projeto",
+          "Para gerar/validar a versão de produção do projeto",
+          "Para criar uma conta no GitHub",
+          "Para abrir o navegador automaticamente"
+        ],
+        answer: 1
+      },
+      {
+        question: "9. Onde podemos acompanhar a execução do workflow no GitHub?",
+        options: [
+          "Na aba Actions",
+          "Na aba Issues",
+          "Na aba Wiki",
+          "No arquivo README apenas"
+        ],
+        answer: 0
+      },
+      {
+        question: "10. Qual é a principal vantagem de usar CI com GitHub Actions?",
+        options: [
+          "Evitar o uso de JavaScript",
+          "Automatizar verificações e reduzir erros antes do deploy",
+          "Remover a necessidade de programar",
+          "Criar imagens automaticamente para redes sociais"
+        ],
+        answer: 1
+      }
+    ];
+
+    let currentQuestion = 0;
+    let answered = false;
+
+    const questionTitle = document.getElementById("questionTitle");
+    const optionsContainer = document.getElementById("options");
+    const feedback = document.getElementById("feedback");
+    const nextBtn = document.getElementById("nextBtn");
+    const progressFill = document.getElementById("progressFill");
+    const progressText = document.getElementById("progressText");
+    const resultBox = document.getElementById("resultBox");
+
+    function loadQuestion() {
+      answered = false;
+      feedback.textContent = "";
+      nextBtn.disabled = true;
+      resultBox.style.display = "none";
+
+      const item = questions[currentQuestion];
+      questionTitle.textContent = item.question;
+      optionsContainer.innerHTML = "";
+
+      item.options.forEach((option, index) => {
+        const button = document.createElement("button");
+        button.className = "option";
+        button.textContent = option;
+        button.onclick = () => checkAnswer(button, index);
+        optionsContainer.appendChild(button);
+      });
+    }
+
+    function checkAnswer(button, selectedIndex) {
+      if (answered) return;
+
+      answered = true;
+      const correctIndex = questions[currentQuestion].answer;
+      const allOptions = document.querySelectorAll(".option");
+
+      allOptions.forEach((option, index) => {
+        option.disabled = true;
+
+        if (index === correctIndex) {
+          option.classList.add("correct");
+        }
+      });
+
+      if (selectedIndex === correctIndex) {
+        feedback.textContent = "Resposta correta!";
+        feedback.style.color = "#15803d";
+      } else {
+        button.classList.add("wrong");
+        feedback.textContent = "Resposta incorreta. Observe a resposta correta destacada.";
+        feedback.style.color = "#b91c1c";
+      }
+
+      updateProgress();
+      nextBtn.disabled = false;
+
+      if (currentQuestion === questions.length - 1) {
+        nextBtn.textContent = "Finalizar";
+      }
+    }
+
+    function updateProgress() {
+      const progress = Math.round(((currentQuestion + 1) / questions.length) * 100);
+      progressFill.style.width = progress + "%";
+      progressText.textContent = progress + "%";
+    }
+
+    function nextQuestion() {
+      if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        loadQuestion();
+      } else {
+        resultBox.style.display = "block";
+        nextBtn.disabled = true;
+      }
+    }
+
+    function restartQuiz() {
+      currentQuestion = 0;
+      progressFill.style.width = "0%";
+      progressText.textContent = "0%";
+      nextBtn.textContent = "Próxima pergunta";
+      loadQuestion();
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>
